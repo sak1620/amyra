@@ -69,4 +69,104 @@ Only the engines do.
 ---
 
 ## Canonical Pipeline (Never Changes)
+Audio In
+↓
+Speech-to-Text (STT)
+↓
+Intent + Emotion
+↓
+LLM (Reasoning)
+↓
+Response Planning
+↓
+Text-to-Speech (TTS)
+↓
+Audio / Video Out
+
+
+This same pipeline supports:
+- Local MVP
+- WebRTC calls
+- AI phone agents
+- Human ↔ AI video
+- AI avatars
+
+---
+
+## Current Scope (Local MVP)
+
+- Runs entirely on `localhost`
+- No cloud dependency
+- Single-user, single-session
+- Acceptable (not perfect) latency
+- CLI or simple browser UI
+
+### Typical Stack
+- STT: Whisper.cpp
+- LLM: Local models via Ollama
+- TTS: Piper / Coqui
+- Orchestration: Python
+- UI: CLI → Browser → WebRTC (later)
+
+---
+
+## What AMYRA Is Not
+
+- ❌ A chatbot wrapper
+- ❌ A cloud-only service
+- ❌ A personality simulator
+- ❌ A demo glued to one model
+
+Amyra is a **conversation system**.
+
+---
+
+## Project Structure (Simplified)
+
+amyra/
+├── orchestrator/ # Core control logic (stable)
+├── stt/ # Speech-to-text engines
+├── llm/ # Reasoning engines
+├── tts/ # Text-to-speech engines
+├── emotion/ # Intent & emotion detection
+├── audio/ # Mic / speaker I/O
+└── ui/ # CLI / Web UI
+
+
+The **orchestrator** is the heart of the system and is designed to survive into production unchanged.
+
+---
+
+## Guiding Motto
+
+> **Presence first. Real-time over perfect. Interruptible by design.**
+
+---
+
+## Status
+
+🚧 Active development — Local MVP phase  
+📍 Architecture locked, components evolving
+
+---
+
+## License
+
+MIT (or your preferred license)
+
+---
+
+## Vision
+
+Amyra is built to become:
+- A real-time AI caller
+- A human-AI video presence
+- A creator-driven AI persona platform
+- An enterprise conversational system
+
+All without rewriting the core.
+
+---
+
+**Amyra listens first.**
 
